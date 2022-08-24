@@ -1,0 +1,115 @@
+:root {
+    --very-dark-blue: hsl(233, 47%, 7%);
+    --dark-desaturated-blue: hsl(244, 38%, 16%);
+    --soft-violet: hsl(277, 64%, 61%);
+    --white: hsl(0, 0%, 100%);
+    --slightly-transparent-white-1: hsla(0, 0%, 100%, 0.75);
+    --slightly-transparent-white-2: hsla(0, 0%, 100%, 0.6);
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--very-dark-blue);
+    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Inter', sans-serif;
+}
+
+.main {
+    display: grid;
+    background-color: var(--dark-desaturated-blue);
+    margin: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    width: 313px;
+    flex-shrink: 0;
+}
+
+.img-container {
+    background-image: url(../images/image-header-mobile.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 230px;
+}
+
+.img-container__div {
+    background-color: hsla(277, 64%, 61%, 0.5);
+    height: 100%;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 1.3rem;
+}
+
+h1 {
+    margin: 0;
+    margin-bottom: 0.8rem;
+    color: var(--white);
+    font-size: 1.8rem;
+}
+
+.description__accent {
+    color: var(--soft-violet);
+}
+
+.content__p {
+    color: var(--slightly-transparent-white-2);
+    line-height: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section__p {
+    font-size: .9rem;
+    color: var(--slightly-transparent-white-2);
+    text-transform: uppercase;
+}
+
+.section__accent {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+@media screen and (min-width: 1016px) {
+    .main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 400px;
+        max-width: 968px;
+        flex: 1;
+    }
+
+    .img-container {
+        background-image: url(../images/image-header-desktop.jpg);
+        height: 400px;
+    }
+
+    .content {
+        grid-row: 1/2;
+        text-align: left;
+        padding: 3rem;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    h1 {
+        margin-bottom: 1.5rem;
+    }
+    .section {
+        flex-direction: row;
+    }
+}
